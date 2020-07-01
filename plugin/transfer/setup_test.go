@@ -44,7 +44,7 @@ func TestParse(t *testing.T) {
 	}
 	for i, tc := range tests {
 		c := caddy.NewTestController("dns", tc.input)
-		transfer, err := parse(c)
+		transfer, err := parseTransfer(c)
 
 		if err == nil && tc.shouldErr {
 			t.Fatalf("Test %d expected errors, but got no error", i)
